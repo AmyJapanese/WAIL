@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Which Article is Longer? — WAIL</title><link rel="stylesheet" href="styles.css"><script defer src="game.js"></script><script defer src="wiki.js"></script><script defer src="app.js"></script></head>
+<body>
+<header><a class="brand" href="index.html"><span class="brand-icon">W</span> WAIL<span class="brand-detail">WIKIPEDIA LENGTH GAME</span></a><span class="edition">ENGLISH WIKIPEDIA ↗</span></header>
+<main>
+ <div class="eyebrow"><span></span> A LITTLE KNOWLEDGE. A BIG GUESS.</div>
+ <h1>Which Article<br>is <em>Longer?</em></h1>
+ <p class="intro">有名な記事が、長いとは限らない。<br>英語版Wikipedia、Byte数が大きいのはどっち？</p>
+ <section class="scoreboard" aria-label="成績"><div><span>正解</span><strong id="correct">0<span> / 0</span></strong></div><div><span>連続正解</span><strong id="streak">0</strong></div><div><span>正答率</span><strong id="rate">—</strong></div></section>
+ <section id="editor" class="panel"><div class="panel-heading"><div><span class="step">01 / SET THE MATCH</span><h2>比べる記事を選ぼう</h2></div><button id="random" class="button secondary">↝ ランダム出題</button></div>
+ <div class="inputs"><div class="field"><label for="input-a"><span>A</span> ARTICLE ONE</label><input id="input-a" placeholder="例：Earth" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest-a"><ul id="suggest-a" class="suggestions" role="listbox" hidden></ul><small id="hint-a">英語の記事名を入力して候補を選択</small></div><span class="versus-small">VS</span><div class="field"><label for="input-b"><span>B</span> ARTICLE TWO</label><input id="input-b" placeholder="例：Coffee" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest-b"><ul id="suggest-b" class="suggestions" role="listbox" hidden></ul><small id="hint-b">英語の記事名を入力して候補を選択</small></div></div>
+ <button id="start" class="button primary" disabled>この2記事で予想する <span>→</span></button></section>
+ <section id="match" hidden><div class="match-heading"><span class="step">02 / MAKE YOUR GUESS</span><h2>どちらの記事が長い？</h2><p>長いと思うカードを選んでください。</p></div><div class="cards"><button class="article-card" id="card-a"><span class="card-label">ARTICLE A</span><span class="article-title" id="title-a"></span><span class="card-bottom" id="bytes-a">こちらが長いと思う <span>↗</span></span></button><span class="versus">VS</span><button class="article-card" id="card-b"><span class="card-label">ARTICLE B</span><span class="article-title" id="title-b"></span><span class="card-bottom" id="bytes-b">こちらが長いと思う <span>↗</span></span></button></div><div id="result" class="result" aria-live="polite" hidden><strong id="verdict"></strong><p id="difference"></p><div id="article-links"></div><button class="button primary" id="next">次の問題へ →</button></div></section>
+ <p id="status" role="status" aria-live="polite"></p>
+ <aside class="how"><span class="how-icon">?</span><p><strong>「長い」って、何を比べるの？</strong><br>記事ソースのByte数を比較します。本文だけでなく、脚注・出典・Wiki記法も含まれます。</p></aside>
+</main><footer><span>WAIL · Which Article is Longer?</span><span>Powered by Wikipedia · 非公式ゲーム</span></footer>
+</body></html>
